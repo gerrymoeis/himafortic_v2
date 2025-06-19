@@ -1,0 +1,659 @@
+{
+  "project": {
+    "name": "The Immersive Digital Campus",
+    "version": "2.0",
+    "type": "Homepage Design",
+    "theme": "Professional tech-forward aesthetics with warm, personal feel through photography and fluid parallax-driven animations"
+  },
+  "design_system": {
+    "colors": {
+      "primary": {
+        "bay_of_many": "#2e3c85",
+        "tango": "#ec7b24",
+        "curious_blue": "#1babdd"
+      },
+      "backgrounds": {
+        "dark_navy": "#2e3c85",
+        "light_off_white": "#F8F9FA",
+        "dark_text": "#1A202C",
+        "white_text": "#FFFFFF"
+      },
+      "gradients": {
+        "aurora_primary": "linear-gradient(135deg, rgba(46,60,133,0.8) 0%, rgba(27,171,221,0.6) 50%, rgba(236,123,36,0.4) 100%)",
+        "aurora_secondary": "radial-gradient(circle at 30% 70%, rgba(236,123,36,0.3) 0%, rgba(27,171,221,0.2) 40%, rgba(46,60,133,0.1) 100%)",
+        "hero_overlay": "linear-gradient(to bottom, rgba(46,60,133,0.7) 0%, rgba(46,60,133,0.9) 100%)"
+      }
+    },
+    "typography": {
+      "font_families": {
+        "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "heading": "Inter, sans-serif"
+      },
+      "scales": {
+        "hero_title": "clamp(2.5rem, 5vw, 4rem)",
+        "section_title": "clamp(1.8rem, 3vw, 2.5rem)",
+        "card_title": "1.25rem",
+        "body": "1rem",
+        "caption": "0.875rem"
+      }
+    },
+    "spacing": {
+      "section_padding": "clamp(4rem, 8vw, 8rem)",
+      "container_padding": "clamp(1rem, 4vw, 2rem)",
+      "card_gap": "clamp(1rem, 2vw, 1.5rem)"
+    }
+  },
+  "global_effects": {
+    "smooth_scroll": {
+      "enabled": true,
+      "library": "framer-motion",
+      "hooks": ["useScroll", "useTransform"],
+      "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+    },
+    "parallax_system": {
+      "layers": {
+        "background": {
+          "speed_multiplier": 0.3,
+          "description": "Slowest moving layer for depth"
+        },
+        "mid_layer": {
+          "speed_multiplier": 0.6,
+          "description": "Medium speed for floating elements"
+        },
+        "content": {
+          "speed_multiplier": 0.8,
+          "description": "Content layer with subtle parallax"
+        },
+        "foreground": {
+          "speed_multiplier": 1.2,
+          "description": "Fastest layer for emphasis"
+        }
+      }
+    },
+    "floating_parallax_icons": {
+      "icon_set": [
+        {
+          "symbol": "</>",
+          "size": "clamp(2rem, 4vw, 3rem)",
+          "color": "#1babdd",
+          "opacity": 0.15,
+          "animation_speed": "slow"
+        },
+        {
+          "symbol": "{}",
+          "size": "clamp(1.5rem, 3vw, 2.5rem)",
+          "color": "#ec7b24",
+          "opacity": 0.12,
+          "animation_speed": "medium"
+        },
+        {
+          "symbol": "//",
+          "size": "clamp(1.8rem, 3.5vw, 2.8rem)",
+          "color": "#2e3c85",
+          "opacity": 0.1,
+          "animation_speed": "fast"
+        },
+        {
+          "symbol": "[]",
+          "size": "clamp(1.6rem, 3.2vw, 2.6rem)",
+          "color": "#1babdd",
+          "opacity": 0.13,
+          "animation_speed": "slow"
+        },
+        {
+          "symbol": "()",
+          "size": "clamp(1.4rem, 2.8vw, 2.2rem)",
+          "color": "#ec7b24",
+          "opacity": 0.11,
+          "animation_speed": "medium"
+        },
+        {
+          "symbol": "&&",
+          "size": "clamp(1.7rem, 3.4vw, 2.7rem)",
+          "color": "#2e3c85",
+          "opacity": 0.09,
+          "animation_speed": "fast"
+        }
+      ],
+      "placement_strategy": {
+        "distribution": "scattered_negative_space",
+        "min_distance_between_icons": "15vw",
+        "sections_with_icons": ["hero", "about", "departments", "gallery", "news"]
+      },
+      "animations": {
+        "float_range": "20px",
+        "duration_range": "8s-15s",
+        "scroll_speed_variation": "0.2x-1.5x"
+      }
+    }
+  },
+  "sections": {
+    "hero": {
+      "layout": {
+        "type": "full_screen_immersive",
+        "height": "100vh",
+        "overflow": "hidden"
+      },
+      "background_system": {
+        "layers": [
+          {
+            "name": "base_photo",
+            "type": "photograph",
+            "description": "High-quality team or campus event photo",
+            "effects": {
+              "darkening": "multiply blend with rgba(0,0,0,0.3)",
+              "parallax_speed": 0.2,
+              "scale_on_scroll": "1.0 to 1.1"
+            }
+          },
+          {
+            "name": "aurora_gradient",
+            "type": "animated_gradient",
+            "gradient": "aurora_primary",
+            "effects": {
+              "morphing": {
+                "enabled": true,
+                "duration": "12s",
+                "keyframes": [
+                  { "time": "0%", "gradient": "aurora_primary" },
+                  { "time": "50%", "gradient": "aurora_secondary" },
+                  { "time": "100%", "gradient": "aurora_primary" }
+                ]
+              },
+              "parallax_speed": 0.4
+            }
+          },
+          {
+            "name": "particle_overlay",
+            "type": "css_animation",
+            "description": "Subtle floating particles using CSS animations",
+            "implementation": {
+              "particle_count": 25,
+              "particle_size": "2px-8px",
+              "colors": ["rgba(236,123,36,0.3)", "rgba(27,171,221,0.2)", "rgba(255,255,255,0.1)"],
+              "animation": {
+                "duration": "20s-40s",
+                "movement": "random_float",
+                "fade_in_out": true
+              }
+            }
+          }
+        ]
+      },
+      "mouse_interactions": {
+        "cursor_follow": {
+          "enabled": true,
+          "elements": [
+            {
+              "selector": ".floating-icon",
+              "effect": "inverse_follow",
+              "strength": 0.03,
+              "description": "Icons move opposite to cursor direction"
+            },
+            {
+              "selector": ".hero-content",
+              "effect": "subtle_follow",
+              "strength": 0.01,
+              "description": "Content follows cursor very subtly"
+            }
+          ]
+        },
+        "glow_effect": {
+          "enabled": true,
+          "description": "Subtle glow that follows mouse movement",
+          "implementation": {
+            "size": "300px",
+            "gradient": "radial-gradient(circle, rgba(236,123,36,0.1) 0%, transparent 70%)",
+            "blend_mode": "overlay",
+            "follow_speed": "0.8s ease-out"
+          }
+        }
+      },
+      "floating_elements": {
+        "count": 8,
+        "icons": [
+          {
+            "symbol": "</>",
+            "position": { "top": "15%", "left": "10%" },
+            "size": "3rem",
+            "color": "#1babdd",
+            "animations": {
+              "float": "8s ease-in-out infinite",
+              "parallax_speed": 0.6,
+              "mouse_interaction": "inverse_follow_strong"
+            }
+          },
+          {
+            "symbol": "{}",
+            "position": { "top": "25%", "right": "15%" },
+            "size": "2.5rem",
+            "color": "#ec7b24",
+            "animations": {
+              "float": "12s ease-in-out infinite",
+              "parallax_speed": 0.8,
+              "mouse_interaction": "inverse_follow_medium"
+            }
+          },
+          {
+            "symbol": "[]",
+            "position": { "bottom": "20%", "left": "8%" },
+            "size": "2.8rem",
+            "color": "#2e3c85",
+            "animations": {
+              "float": "10s ease-in-out infinite",
+              "parallax_speed": 0.4,
+              "mouse_interaction": "inverse_follow_strong"
+            }
+          },
+          {
+            "symbol": "()",
+            "position": { "top": "45%", "right": "8%" },
+            "size": "2.2rem",
+            "color": "#1babdd",
+            "animations": {
+              "float": "14s ease-in-out infinite",
+              "parallax_speed": 0.7,
+              "mouse_interaction": "inverse_follow_light"
+            }
+          },
+          {
+            "symbol": "//",
+            "position": { "top": "60%", "left": "12%" },
+            "size": "2.6rem",
+            "color": "#ec7b24",
+            "animations": {
+              "float": "9s ease-in-out infinite",
+              "parallax_speed": 0.5,
+              "mouse_interaction": "inverse_follow_medium"
+            }
+          },
+          {
+            "symbol": "&&",
+            "position": { "bottom": "35%", "right": "12%" },
+            "size": "2.4rem",
+            "color": "#2e3c85",
+            "animations": {
+              "float": "11s ease-in-out infinite",
+              "parallax_speed": 0.9,
+              "mouse_interaction": "inverse_follow_strong"
+            }
+          }
+        ]
+      },
+      "content": {
+        "positioning": "center",
+        "max_width": "800px",
+        "components": [
+          {
+            "type": "h1",
+            "text": "Mewujudkan Generasi Unggul dan Inovatif",
+            "styles": {
+              "font_size": "clamp(2.5rem, 5vw, 4rem)",
+              "font_weight": "700",
+              "color": "#FFFFFF",
+              "text_align": "center",
+              "line_height": "1.2",
+              "margin_bottom": "1.5rem"
+            },
+            "animations": {
+              "entrance": "fade_in_up_stagger",
+              "parallax_speed": 0.85
+            }
+          },
+          {
+            "type": "p",
+            "text": "Himpunan Mahasiswa D4 Manajemen Informatika, Universitas Negeri Surabaya",
+            "styles": {
+              "font_size": "clamp(1.1rem, 2vw, 1.3rem)",
+              "color": "rgba(255,255,255,0.9)",
+              "text_align": "center",
+              "margin_bottom": "2.5rem"
+            },
+            "animations": {
+              "entrance": "fade_in_up_stagger",
+              "delay": "0.2s",
+              "parallax_speed": 0.9
+            }
+          },
+          {
+            "type": "button_group",
+            "buttons": [
+              {
+                "text": "Bergabung Dengan Kami",
+                "variant": "primary",
+                "color": "#ec7b24"
+              },
+              {
+                "text": "Pelajari Lebih Lanjut",
+                "variant": "outline",
+                "color": "#1babdd"
+              }
+            ],
+            "animations": {
+              "entrance": "fade_in_up_stagger",
+              "delay": "0.4s",
+              "parallax_speed": 0.95
+            }
+          }
+        ]
+      }
+    },
+    "about_community_bento": {
+      "layout": {
+        "type": "bento_grid",
+        "background": "#F8F9FA",
+        "padding": "clamp(4rem, 8vw, 8rem) clamp(1rem, 4vw, 2rem)",
+        "grid_template": {
+          "desktop": "repeat(3, 1fr) / repeat(4, 1fr)",
+          "tablet": "repeat(4, 1fr) / repeat(2, 1fr)",
+          "mobile": "repeat(4, 1fr) / 1fr"
+        }
+      },
+      "floating_icons": {
+        "count": 4,
+        "positions": [
+          { "top": "10%", "left": "5%", "symbol": "{}", "color": "#ec7b24" },
+          { "top": "60%", "right": "8%", "symbol": "</>", "color": "#1babdd" },
+          { "bottom": "15%", "left": "3%", "symbol": "[]", "color": "#2e3c85" },
+          { "top": "30%", "right": "2%", "symbol": "//", "color": "#ec7b24" }
+        ]
+      },
+      "cells": [
+        {
+          "name": "about_us_main",
+          "span": { "desktop": "2x2", "tablet": "2x1", "mobile": "1x1" },
+          "position": "top-left",
+          "content": {
+            "title": "Tentang Himafortic",
+            "description": "Organisasi mahasiswa yang berkomitmen mengembangkan potensi mahasiswa di bidang teknologi informasi",
+            "stats": [
+              { "number": "500+", "label": "Anggota Aktif" },
+              { "number": "50+", "label": "Program Kerja" },
+              { "number": "5", "label": "Departemen" }
+            ]
+          },
+          "animations": {
+            "entrance": "fade_in_slide_up",
+            "stats_counter": "number_ticker",
+            "parallax_speed": 0.8
+          }
+        },
+        {
+          "name": "latest_article",
+          "span": { "desktop": "2x1", "tablet": "2x1", "mobile": "1x1" },
+          "position": "top-right",
+          "content": {
+            "title": "Artikel Terbaru",
+            "featured_image": true,
+            "image_effects": {
+              "parallax_speed": 0.6,
+              "hover_scale": 1.05
+            }
+          },
+          "animations": {
+            "entrance": "fade_in_slide_up",
+            "delay": "0.1s"
+          }
+        },
+        {
+          "name": "member_spotlight",
+          "span": { "desktop": "1x1", "tablet": "1x1", "mobile": "1x1" },
+          "position": "bottom-left",
+          "content": {
+            "title": "Fungsionaris Bulan Ini",
+            "member_photo": true,
+            "member_info": {
+              "name": "placeholder",
+              "position": "placeholder"
+            }
+          },
+          "animations": {
+            "entrance": "fade_in_slide_up",
+            "delay": "0.2s"
+          }
+        },
+        {
+          "name": "campus_atmosphere",
+          "span": { "desktop": "1x1", "tablet": "1x1", "mobile": "1x1" },
+          "position": "bottom-center",
+          "content": {
+            "title": "Suasana Kampus",
+            "campus_photo": true,
+            "photo_effects": {
+              "parallax_speed": 0.7,
+              "hover_brightness": 1.1
+            }
+          },
+          "animations": {
+            "entrance": "fade_in_slide_up",
+            "delay": "0.3s"
+          }
+        }
+      ]
+    },
+    "departments_showcase": {
+      "layout": {
+        "type": "horizontal_scroll",
+        "background": "#F8F9FA",
+        "padding": "clamp(3rem, 6vw, 6rem) 0"
+      },
+      "title": {
+        "text": "Departemen Himafortic",
+        "styles": {
+          "text_align": "center",
+          "margin_bottom": "3rem",
+          "font_size": "clamp(1.8rem, 3vw, 2.5rem)"
+        }
+      },
+      "floating_icons": {
+        "count": 3,
+        "positions": [
+          { "top": "20%", "left": "10%", "symbol": "</>", "color": "#1babdd" },
+          { "bottom": "25%", "right": "15%", "symbol": "{}", "color": "#ec7b24" },
+          { "top": "50%", "left": "5%", "symbol": "[]", "color": "#2e3c85" }
+        ]
+      },
+      "cards": {
+        "count": 8,
+        "card_structure": {
+          "image": "department_activity_photo",
+          "title": "department_name",
+          "effects": {
+            "border_beam_hover": true,
+            "parallax_horizontal": {
+              "speed_multiplier": 1.2,
+              "description": "Cards move faster than scroll for sliding effect"
+            }
+          }
+        },
+        "scroll_behavior": {
+          "type": "smooth_horizontal",
+          "snap": "optional",
+          "momentum": true
+        }
+      }
+    },
+    "gallery_preview": {
+      "layout": {
+        "type": "full_width_showcase",
+        "background": "#F8F9FA",
+        "padding": "clamp(4rem, 8vw, 8rem) 0"
+      },
+      "title": {
+        "text": "Momen Kami",
+        "styles": {
+          "text_align": "center",
+          "margin_bottom": "3rem",
+          "font_size": "clamp(1.8rem, 3vw, 2.5rem)"
+        }
+      },
+      "floating_icons": {
+        "count": 5,
+        "positions": [
+          { "top": "15%", "left": "8%", "symbol": "()", "color": "#ec7b24" },
+          { "top": "25%", "right": "12%", "symbol": "//", "color": "#1babdd" },
+          { "bottom": "20%", "left": "10%", "symbol": "{}", "color": "#2e3c85" },
+          { "top": "60%", "right": "8%", "symbol": "[]", "color": "#ec7b24" },
+          { "bottom": "30%", "right": "15%", "symbol": "&&", "color": "#1babdd" }
+        ]
+      },
+      "infinite_scroll_reel": {
+        "image_count": "12-15",
+        "scroll_direction": "right_to_left",
+        "scroll_speed": "30s linear infinite",
+        "image_properties": {
+          "varying_dimensions": true,
+          "masonry_style": true,
+          "aspect_ratios": ["16:9", "4:3", "1:1", "3:4"]
+        },
+        "interactions": {
+          "hover_slow_scroll": {
+            "new_speed": "60s linear infinite"
+          },
+          "hover_image_effects": {
+            "scale": 1.05,
+            "brightness": 1.1,
+            "transition": "0.3s ease"
+          }
+        }
+      },
+      "cta_button": {
+        "text": "Lihat Galeri Lengkap",
+        "position": "center_below_reel",
+        "variant": "primary",
+        "color": "#ec7b24"
+      }
+    },
+    "latest_news": {
+      "layout": {
+        "type": "three_column_grid",
+        "background": "#F8F9FA",
+        "padding": "clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 2rem)"
+      },
+      "title": {
+        "text": "Berita Terbaru",
+        "styles": {
+          "text_align": "center",
+          "margin_bottom": "3rem"
+        }
+      },
+      "floating_icons": {
+        "count": 3,
+        "positions": [
+          { "top": "20%", "left": "5%", "symbol": "</>", "color": "#1babdd" },
+          { "bottom": "25%", "right": "10%", "symbol": "{}", "color": "#ec7b24" },
+          { "top": "50%", "right": "3%", "symbol": "[]", "color": "#2e3c85" }
+        ]
+      },
+      "cards": {
+        "count": 3,
+        "animations": {
+          "parallax_float": {
+            "enabled": true,
+            "speed_variations": [0.8, 1.0, 1.2],
+            "description": "Each card moves at slightly different speed for floating effect"
+          },
+          "entrance": "fade_in_slide_up_stagger"
+        }
+      }
+    },
+    "footer": {
+      "layout": {
+        "type": "four_column_grid",
+        "background": "#2e3c85",
+        "color": "#FFFFFF"
+      },
+      "floating_icons": {
+        "count": 4,
+        "positions": [
+          { "top": "20%", "left": "10%", "symbol": "</>", "color": "rgba(236,123,36,0.3)" },
+          { "top": "40%", "right": "15%", "symbol": "{}", "color": "rgba(27,171,221,0.3)" },
+          { "bottom": "30%", "left": "8%", "symbol": "[]", "color": "rgba(236,123,36,0.3)" },
+          { "top": "60%", "right": "5%", "symbol": "//", "color": "rgba(27,171,221,0.3)" }
+        ]
+      },
+      "entrance_animation": {
+        "type": "slide_up_from_bottom",
+        "trigger": "scroll_to_bottom",
+        "duration": "0.8s",
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "columns": [
+        {
+          "title": "Himafortic",
+          "content": "contact_info_and_description"
+        },
+        {
+          "title": "Quick Links",
+          "content": "navigation_links"
+        },
+        {
+          "title": "Departemen",
+          "content": "department_links"
+        },
+        {
+          "title": "Social Media",
+          "content": "social_media_links"
+        }
+      ]
+    }
+  },
+  "responsive_design": {
+    "breakpoints": {
+      "mobile": "320px - 768px",
+      "tablet": "769px - 1024px",
+      "desktop": "1025px+"
+    },
+    "mobile_optimizations": {
+      "floating_icons": {
+        "reduced_count": true,
+        "smaller_sizes": true,
+        "less_animation": true
+      },
+      "parallax": {
+        "reduced_intensity": true,
+        "performance_mode": true
+      },
+      "hero_section": {
+        "simplified_background": true,
+        "reduced_particles": true
+      }
+    }
+  },
+  "performance_considerations": {
+    "image_optimization": {
+      "format": "WebP with JPEG fallback",
+      "lazy_loading": true,
+      "responsive_images": true
+    },
+    "animation_performance": {
+      "use_transform_and_opacity": true,
+      "hardware_acceleration": "transform3d(0,0,0)",
+      "reduce_motion_preference": "respected"
+    },
+    "bundle_optimization": {
+      "code_splitting": true,
+      "tree_shaking": true,
+      "critical_css": "inlined"
+    }
+  },
+  "accessibility": {
+    "motion_preferences": {
+      "respect_prefers_reduced_motion": true,
+      "fallback_static_design": true
+    },
+    "contrast_ratios": "WCAG AA compliant",
+    "keyboard_navigation": "full_support",
+    "screen_reader_support": "aria_labels_and_descriptions"
+  },
+  "implementation_libraries": {
+    "animation": "framer-motion",
+    "ui_components": "shadcn/ui",
+    "styling": "tailwindcss",
+    "icons": "lucide-react",
+    "additional": {
+      "intersection_observer": "for_scroll_triggers",
+      "resize_observer": "for_responsive_animations"
+    }
+  }
+}

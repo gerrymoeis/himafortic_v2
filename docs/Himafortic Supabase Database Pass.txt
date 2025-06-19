@@ -1,0 +1,8 @@
+Host: db.dbdscepooawgswckgzat.supabase.co
+Database Name: postgres
+User: postgres
+Password: 2VgpgeDSk56tcUk1
+Port: 5432
+
+Supabase Project URL: https://dbdscepooawgswckgzat.supabase.co
+Supabase Anon Public Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZHNjZXBvb2F3Z3N3Y2tnemF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxNzYwNTQsImV4cCI6MjA2NTc1MjA1NH0.F3R6XhSXdSlUezGbun3zl-T-8s76broCEUurQJoZaUg
