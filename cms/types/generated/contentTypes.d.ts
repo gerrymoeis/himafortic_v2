@@ -835,10 +835,11 @@ export interface ApiFunctionaryFunctionary extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
+    NIM: Attribute.String & Attribute.Required & Attribute.Unique;
     position: Attribute.String & Attribute.Required;
     period: Attribute.String & Attribute.Required;
     class_year: Attribute.String & Attribute.Required;
-    photo: Attribute.Media & Attribute.Required;
+    photo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
