@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "functionaries",
+  "info": {
+    "singularName": "functionary",
+    "pluralName": "functionaries",
+    "displayName": "HIMAFORTIC Functionary",
+    "description": "To manage the list of organization officials."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "period": {
+      "type": "string",
+      "required": true
+    },
+    "class_year": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
