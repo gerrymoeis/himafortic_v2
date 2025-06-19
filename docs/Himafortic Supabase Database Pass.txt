@@ -1,7 +1,7 @@
 Host: db.dbdscepooawgswckgzat.supabase.co
 Database Name: postgres
 User: postgres
-Password: 2VgpgeDSk56tcUk1
+Password: 
 Port: 5432
 
 Supabase Project URL: https://dbdscepooawgswckgzat.supabase.co
