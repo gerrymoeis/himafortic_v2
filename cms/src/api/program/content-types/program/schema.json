@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "singularName": "program",
+    "pluralName": "programs",
+    "displayName": "Program Kerja",
+    "description": "Represents a work program undertaken by a department."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "programs"
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "poster_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "registration_link": {
+      "type": "string"
+    },
+    "info_link": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Completed",
+        "Ongoing",
+        "Planned"
+      ],
+      "required": true,
+      "default": "Planned"
+    },
+    "timeline_start": {
+      "type": "date"
+    },
+    "timeline_end": {
+      "type": "date"
+    },
+    "gallery_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gallery-item.gallery-item",
+      "inversedBy": "programs"
+    },
+    "program_data": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program-data.program-data",
+      "mappedBy": "program"
+    }
+  }
+}

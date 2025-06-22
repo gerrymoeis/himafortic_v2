@@ -1,0 +1,285 @@
+{
+  "organization_structure": {
+    "BPH": {
+      "department_name": "Badan Pengurus Harian",
+      "members": [
+        {
+          "name": "Tegar Eka Pambudi El Akhsan",
+          "position": "Ketua HMP Manajemen Informatika"
+        },
+        {
+          "name": "Achmad Diky Setiawan",
+          "position": "Wakil Ketua HMP Manajemen Informatika"
+        },
+        {
+          "name": "Atika Haniifatun Nisa'",
+          "position": "Sekretaris Umum"
+        },
+        {
+          "name": "Diah Arum Cahyaningtyas",
+          "position": "Sekretaris I"
+        },
+        {
+          "name": "Nayla Rahayu Puspitasari",
+          "position": "Sekretaris II"
+        },
+        {
+          "name": "Fiana Agta Riyani",
+          "position": "Bendahara Umum"
+        },
+        {
+          "name": "Ambar Zahrotul Wardah",
+          "position": "Bendahara I"
+        },
+        {
+          "name": "Aftita Choirunnisa",
+          "position": "Bendahara II"
+        }
+      ]
+    },
+    "PSDM": {
+      "department_name": "Departemen PSDM",
+      "members": [
+        {
+          "name": "Fina Fadhilah Maulana",
+          "position": "Ketua Departemen PSDM"
+        },
+        {
+          "name": "Rachmah Pia Putri Dewi",
+          "position": "Staff"
+        },
+        {
+          "name": "Gerhani Vindino Putra",
+          "position": "Staff"
+        },
+        {
+          "name": "Septiana Dwi Lestari",
+          "position": "Staff"
+        },
+        {
+          "name": "Fitriyu Chalifatus Zahro",
+          "position": "Staff"
+        }
+      ]
+    },
+    "PENRISTEK": {
+      "department_name": "Departemen Penristek",
+      "members": [
+        {
+          "name": "Gerry Moeis",
+          "position": "Ketua Departemen PENRISTEK"
+        },
+        {
+          "name": "Dickrullah Brillian Akbar",
+          "position": "Staff"
+        },
+        {
+          "name": "Ardhila Zahra Farasana",
+          "position": "Staff"
+        },
+        {
+          "name": "Ulur Roqyad Rachmandani",
+          "position": "Staff"
+        },
+        {
+          "name": "Vielleniania Alia Febrian",
+          "position": "Staff"
+        },
+        {
+          "name": "Whimawangyah Sabilillah",
+          "position": "Staff"
+        },
+        {
+          "name": "Ditio Septian R",
+          "position": "Staff"
+        }
+      ]
+    },
+    "DALAM_NEGERI": {
+      "department_name": "Departemen Dalam Negeri",
+      "members": [
+        {
+          "name": "Muhammad Nizar Amirul H.",
+          "position": "Ketua Departemen Dalam Negeri"
+        },
+        {
+          "name": "Yosion Besty Marpaung",
+          "position": "Staff"
+        },
+        {
+          "name": "Victorio Khalifah Indra",
+          "position": "Staff"
+        },
+        {
+          "name": "Nesyari Az-Zahra",
+          "position": "Staff"
+        },
+        {
+          "name": "Diana Safitri",
+          "position": "Staff"
+        },
+        {
+          "name": "Khabibi Al Manif",
+          "position": "Staff"
+        },
+        {
+          "name": "Elni Rifana RaFan",
+          "position": "Staff"
+        }
+      ]
+    },
+    "KOMINFO": {
+      "department_name": "Departemen Kominfo",
+      "members": [
+        {
+          "name": "Naufal Risky Nugroho",
+          "position": "Ketua Departemen KOMINFO"
+        },
+        {
+          "name": "Nur Aini Setya Puti",
+          "position": "Staff"
+        },
+        {
+          "name": "Dea Ayu Novita Putri",
+          "position": "Staff"
+        },
+        {
+          "name": "Naila Khalilulah Mahendra",
+          "position": "Staff"
+        },
+        {
+          "name": "Muhammad Rafif Ramadhan",
+          "position": "Staff"
+        },
+        {
+          "name": "Swawaile Syaf Anhar",
+          "position": "Staff"
+        },
+        {
+          "name": "Meyssa Aqila Adkara",
+          "position": "Staff"
+        },
+        {
+          "name": "Michiana Defi Gunawan",
+          "position": "Staff"
+        }
+      ]
+    },
+    "LUAR_NEGERI": {
+      "department_name": "Departemen Luar Negeri",
+      "members": [
+        {
+          "name": "Salzvikla Amanda Putri",
+          "position": "Ketua Departemen Luar Negeri"
+        },
+        {
+          "name": "Widigra Putri Aditya Wardaningryas",
+          "position": "Staff"
+        },
+        {
+          "name": "Zaidan Mufasaly Juan Kustana",
+          "position": "Staff"
+        },
+        {
+          "name": "Astrid Yohela Lumbantobing",
+          "position": "Staff"
+        },
+        {
+          "name": "Hanson Philip",
+          "position": "Staff"
+        },
+        {
+          "name": "Sabri Adinda Herniawati",
+          "position": "Staff"
+        },
+        {
+          "name": "Moch Izzul Maulana H",
+          "position": "Staff"
+        }
+      ]
+    },
+    "AGAMA_SOSIAL": {
+      "department_name": "Departemen Agama Sosial",
+      "members": [
+        {
+          "name": "Yazqi Mufti Kaharuxyani",
+          "position": "Ketua Departemen Agama dan Sosial"
+        },
+        {
+          "name": "Afiya Fauzilah Putri",
+          "position": "Staff"
+        },
+        {
+          "name": "Aghina Diftari Nauravyahkana",
+          "position": "Staff"
+        },
+        {
+          "name": "Billy Rayakha",
+          "position": "Staff"
+        },
+        {
+          "name": "Faiz Maulana",
+          "position": "Staff"
+        }
+      ]
+    },
+    "MnB": {
+      "department_name": "Departemen MnB",
+      "members": [
+        {
+          "name": "M. Raka Phaedra Agus Putra",
+          "position": "Ketua Departemen MnB"
+        },
+        {
+          "name": "Muhammad Ulul Amri",
+          "position": "Staff"
+        },
+        {
+          "name": "Laleycha Agnafiarali Hendrawinata",
+          "position": "Staff"
+        },
+        {
+          "name": "Moch Hafidz Aarof",
+          "position": "Staff"
+        },
+        {
+          "name": "Gading Kent Sadewa",
+          "position": "Staff"
+        },
+        {
+          "name": "Ezra khamdatin niswa",
+          "position": "Staff"
+        }
+      ]
+    },
+    "EKONOMI_KREATIF": {
+      "department_name": "Ekonomi Kreatif",
+      "members": [
+        {
+          "name": "Chaterina Fatma Diaskas",
+          "position": "Ketua Departemen Ekonomi Kreatif"
+        },
+        {
+          "name": "Azrizatul Husnyah",
+          "position": "Staff"
+        },
+        {
+          "name": "Lusida Cynthia Wiasyu",
+          "position": "Staff"
+        },
+        {
+          "name": "Makrus Fakrul Muharrom",
+          "position": "Staff"
+        },
+        {
+          "name": "Achmad Hakimi Al-Jamadi",
+          "position": "Staff"
+        },
+        {
+          "name": "Intan Salma Saladsyia",
+          "position": "Staff"
+        }
+      ]
+    }
+  }
+}

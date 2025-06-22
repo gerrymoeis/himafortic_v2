@@ -1,0 +1,263 @@
+{
+  "design_system": {
+    "color_system": {
+      "primary": "#0A192F",
+      "secondary": "#2E86C7",
+      "accent": "#FF6B35",
+      "neutral": "#FFFFFF",
+      "dark_mode": "#000000",
+      "gradient": {
+        "default": "linear-gradient(135deg, #0A192F 0%, #1F2A44 100%)",
+        "highlight": "radial-gradient(circle at 30% 30%, #FF6B35 0%, #FFA500 100%)"
+      },
+      "status_colors": {
+        "success": "#28A745",
+        "warning": "#FFC107",
+        "error": "#DC3545"
+      }
+    },
+    "typography": {
+      "font_stack": [
+        "Inter, system-ui, sans-serif",
+        "Geist, sans-serif",
+        "monospace"
+      ],
+      "headings": {
+        "h1": {
+          "size": "clamp(48px, 8vw, 120px)",
+          "weight": 700,
+          "line_height": "1.1",
+          "tracking": "-0.02em"
+        },
+        "h2": {
+          "size": "48px",
+          "weight": 600,
+          "line_height": "1.2"
+        },
+        "h3": {
+          "size": "36px",
+          "weight": 600
+        }
+      },
+      "body": {
+        "default": {
+          "size": "16px",
+          "weight": 400,
+          "line_height": "1.6"
+        },
+        "lead": {
+          "size": "20px",
+          "weight": 500
+        }
+      },
+      "utilities": {
+        "mono": "14px",
+        "caption": "12px"
+      }
+    },
+    "layout_system": {
+      "grid": {
+        "columns": 12,
+        "gutter": 40,
+        "max_width": "1440px"
+      },
+      "spacing": {
+        "unit": 8,
+        "scale": [0, 8, 16, 24, 32, 48, 64, 80, 120],
+        "section_padding": {
+          "default": 60,
+          "header": 80,
+          "hero": 120
+        }
+      },
+      "breakpoints": {
+        "mobile": 768,
+        "tablet": 1024,
+        "desktop": 1440
+      }
+    },
+    "components": {
+      "header": {
+        "height": 80,
+        "nav": {
+          "alignment": "right",
+          "link_spacing": 24,
+          "hover_effect": "underline",
+          "mobile_menu": "hamburger"
+        },
+        "cta": {
+          "primary": "rounded-full bg-accent text-white px-8 py-3",
+          "secondary": "border border-accent text-accent"
+        }
+      },
+      "hero_section": {
+        "background": "curved_gradient_overlay",
+        "content": {
+          "alignment": "center",
+          "tagline": {
+            "badge": "bg-secondary text-white px-4 py-1 rounded-full"
+          },
+          "buttons": {
+            "spacing": 32
+          }
+        },
+        "visual": {
+          "type": "illustration",
+          "animation": "parallax_layers"
+        }
+      },
+      "feature_grid": {
+        "columns": {
+          "default": 3,
+          "max": 4
+        },
+        "card": {
+          "style": "glassmorphism",
+          "padding": 24,
+          "radius": 12,
+          "hover": "lift",
+          "icon": {
+            "size": 48,
+            "position": "top"
+          }
+        }
+      },
+      "pricing_table": {
+        "layout": "comparison",
+        "card": {
+          "base": "border border-gray-200 p-6 rounded-xl",
+          "highlight": "bg-gradient-to-br from-accent to-secondary text-white shadow-lg"
+        },
+        "features": {
+          "checkmark": "text-accent"
+        }
+      },
+      "testimonials": {
+        "layout": "carousel",
+        "card": {
+          "background": "white",
+          "quote_icon": "left-aligned",
+          "avatar": "circular"
+        }
+      }
+    },
+    "interaction_states": {
+      "hover": {
+        "scale": 1.03,
+        "shadow": "0 8px 24px rgba(0,0,0,0.1)"
+      },
+      "focus": {
+        "outline": "2px dashed #FF6B35",
+        "outline_offset": 2
+      },
+      "transitions": {
+        "default": "all 0.2s ease-in-out",
+        "hover": "transform 0.15s ease"
+      }
+    },
+    "dark_mode": {
+      "surface": "#0A192F",
+      "card": "#1A2532",
+      "text": "#FFFFFF",
+      "muted": "#9CA3AF"
+    },
+    "light_mode": {
+      "surface": "#FFFFFF",
+      "card": "#F9FAFB",
+      "text": "#111827",
+      "muted": "#6B7280"
+    },
+    "utilities": {
+      "radius": {
+        "sm": 4,
+        "md": 8,
+        "lg": 12,
+        "full": 9999
+      },
+      "shadow": {
+        "sm": "0 1px 2px rgba(0,0,0,0.05)",
+        "md": "0 4px 6px rgba(0,0,0,0.1)",
+        "lg": "0 10px 15px rgba(0,0,0,0.1)"
+      }
+    }
+  },
+  "page_templates": {
+    "home": {
+      "sections": [
+        "hero",
+        "trust_bar",
+        "features",
+        "pricing",
+        "testimonials",
+        "cta"
+      ],
+      "hero": {
+        "layout": "centered",
+        "visual": "illustration"
+      },
+      "features": {
+        "layout": "3_columns"
+      }
+    },
+    "about": {
+      "sections": [
+        "hero",
+        "team",
+        "timeline",
+        "values",
+        "contact"
+      ],
+      "team": {
+        "layout": "4_columns",
+        "cards": "portrait"
+      },
+      "timeline": {
+        "style": "vertical"
+      }
+    },
+    "contact": {
+      "sections": [
+        "hero",
+        "form",
+        "map",
+        "info"
+      ],
+      "form": {
+        "columns": 2,
+        "inputs": "floating_labels"
+      },
+      "map": {
+        "provider": "mapbox",
+        "style": "dark"
+      }
+    }
+  },
+  "implementation_guidelines": {
+    "responsive": {
+      "mobile": {
+        "stack_columns": true,
+        "navigation": "hamburger",
+        "hero": {
+          "text_alignment": "center"
+        }
+      },
+      "tablet": {
+        "feature_columns": 2,
+        "card_layout": "horizontal"
+      }
+    },
+    "accessibility": {
+      "contrast": "AA",
+      "focus_order": "logical",
+      "aria_labels": {
+        "navigation": "Main Navigation",
+        "form": "Contact Form"
+      }
+    },
+    "performance": {
+      "image_optimization": "webp_format",
+      "lazy_loading": true,
+      "critical_css": 1500
+    }
+  }
+}

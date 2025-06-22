@@ -4,7 +4,7 @@
   "info": {
     "singularName": "functionary",
     "pluralName": "functionaries",
-    "displayName": "HIMAFORTIC Functionary",
+    "displayName": "Fungsionaris",
     "description": "To manage the list of organization officials."
   },
   "options": {
@@ -39,6 +39,18 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "functionaries"
+    },
+    "committee_programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program-data.program-data",
+      "mappedBy": "committee_members"
     }
   }
 }

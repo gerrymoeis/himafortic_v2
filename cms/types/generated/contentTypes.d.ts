@@ -793,7 +793,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   info: {
     singularName: 'article';
     pluralName: 'articles';
-    displayName: 'HIMAFORTIC Article';
+    displayName: 'Artikel';
     description: 'For news, announcements, and blog posts.';
   };
   options: {
@@ -822,12 +822,54 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiDepartmentDepartment extends Schema.CollectionType {
+  collectionName: 'departments';
+  info: {
+    singularName: 'department';
+    pluralName: 'departments';
+    displayName: 'Departemen';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.Text;
+    profile_picture: Attribute.Media;
+    functionaries: Attribute.Relation<
+      'api::department.department',
+      'oneToMany',
+      'api::functionary.functionary'
+    >;
+    programs: Attribute.Relation<
+      'api::department.department',
+      'oneToMany',
+      'api::program.program'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::department.department',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::department.department',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFunctionaryFunctionary extends Schema.CollectionType {
   collectionName: 'functionaries';
   info: {
     singularName: 'functionary';
     pluralName: 'functionaries';
-    displayName: 'HIMAFORTIC Functionary';
+    displayName: 'Fungsionaris';
     description: 'To manage the list of organization officials.';
   };
   options: {
@@ -840,6 +882,16 @@ export interface ApiFunctionaryFunctionary extends Schema.CollectionType {
     period: Attribute.String & Attribute.Required;
     class_year: Attribute.String & Attribute.Required;
     photo: Attribute.Media;
+    department: Attribute.Relation<
+      'api::functionary.functionary',
+      'manyToOne',
+      'api::department.department'
+    >;
+    committee_programs: Attribute.Relation<
+      'api::functionary.functionary',
+      'manyToMany',
+      'api::program-data.program-data'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -862,7 +914,7 @@ export interface ApiGalleryItemGalleryItem extends Schema.CollectionType {
   info: {
     singularName: 'gallery-item';
     pluralName: 'gallery-items';
-    displayName: 'HIMAFORTIC Gallery Item';
+    displayName: 'Galeri Foto';
     description: "For photos in the website's gallery.";
   };
   options: {
@@ -872,6 +924,11 @@ export interface ApiGalleryItemGalleryItem extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     images: Attribute.Media & Attribute.Required;
+    programs: Attribute.Relation<
+      'api::gallery-item.gallery-item',
+      'manyToMany',
+      'api::program.program'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -882,6 +939,105 @@ export interface ApiGalleryItemGalleryItem extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::gallery-item.gallery-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgramProgram extends Schema.CollectionType {
+  collectionName: 'programs';
+  info: {
+    singularName: 'program';
+    pluralName: 'programs';
+    displayName: 'Program Kerja';
+    description: 'Represents a work program undertaken by a department.';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    description: Attribute.RichText & Attribute.Required;
+    department: Attribute.Relation<
+      'api::program.program',
+      'manyToOne',
+      'api::department.department'
+    >;
+    main_image: Attribute.Media;
+    poster_image: Attribute.Media;
+    registration_link: Attribute.String;
+    info_link: Attribute.String;
+    status: Attribute.Enumeration<['Completed', 'Ongoing', 'Planned']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Planned'>;
+    timeline_start: Attribute.Date;
+    timeline_end: Attribute.Date;
+    gallery_items: Attribute.Relation<
+      'api::program.program',
+      'manyToMany',
+      'api::gallery-item.gallery-item'
+    >;
+    program_data: Attribute.Relation<
+      'api::program.program',
+      'oneToOne',
+      'api::program-data.program-data'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::program.program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::program.program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgramDataProgramData extends Schema.CollectionType {
+  collectionName: 'program_data_collection';
+  info: {
+    singularName: 'program-data';
+    pluralName: 'program-data-collection';
+    displayName: 'Program Kerja Data';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    program: Attribute.Relation<
+      'api::program-data.program-data',
+      'oneToOne',
+      'api::program.program'
+    >;
+    committee_members: Attribute.Relation<
+      'api::program-data.program-data',
+      'manyToMany',
+      'api::functionary.functionary'
+    >;
+    proposal_document: Attribute.Media;
+    funding_amount: Attribute.Decimal;
+    evaluation_notes: Attribute.RichText;
+    evaluation_document: Attribute.Media;
+    internal_documents: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::program-data.program-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::program-data.program-data',
       'oneToOne',
       'admin::user'
     > &
@@ -908,8 +1064,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::department.department': ApiDepartmentDepartment;
       'api::functionary.functionary': ApiFunctionaryFunctionary;
       'api::gallery-item.gallery-item': ApiGalleryItemGalleryItem;
+      'api::program.program': ApiProgramProgram;
+      'api::program-data.program-data': ApiProgramDataProgramData;
     }
   }
 }

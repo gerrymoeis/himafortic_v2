@@ -4,7 +4,7 @@
   "info": {
     "singularName": "gallery-item",
     "pluralName": "gallery-items",
-    "displayName": "HIMAFORTIC Gallery Item",
+    "displayName": "Galeri Foto",
     "description": "For photos in the website's gallery."
   },
   "options": {
@@ -25,6 +25,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "mappedBy": "gallery_items"
     }
   }
 }

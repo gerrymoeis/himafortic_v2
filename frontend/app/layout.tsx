@@ -9,17 +9,17 @@ const tomorrow = Tomorrow({
 });
 
 export const metadata: Metadata = {
-  title: "HIMAFORTIC UNESA",
-  description: "Official Website of Himpunan Mahasiswa Manajemen Informatika UNESA",
+  title: "Himafortic UNESA - Himpunan Mahasiswa D4 Manajemen Informatika",
+  description: "Official Website of Himpunan Mahasiswa D4 Manajemen Informatika UNESA",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",

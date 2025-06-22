@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "program_data_collection",
+  "info": {
+    "singularName": "program-data",
+    "pluralName": "program-data-collection",
+    "displayName": "Program Kerja Data"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program.program",
+      "inversedBy": "program_data"
+    },
+    "committee_members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::functionary.functionary",
+      "inversedBy": "committee_programs"
+    },
+    "proposal_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "funding_amount": {
+      "type": "decimal"
+    },
+    "evaluation_notes": {
+      "type": "richtext"
+    },
+    "evaluation_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "internal_documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

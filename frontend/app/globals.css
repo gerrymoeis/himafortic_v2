@@ -1,10 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
-
 
 @layer base {
   :root {
@@ -33,6 +31,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --black: #000;
+    --white: #fff;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -59,10 +59,10 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --black: #000;
+    --white: #fff;
   }
 }
-
-
 
 @layer base {
   * {
@@ -70,5 +70,86 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+  @keyframes rotate-border {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+@layer components {
+  .btn-gradient {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    min-width: 140px;
+    height: 50px;
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    font-family: "Tomorrow", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #1a2327;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: conic-gradient(#ec7b24, #1babdd, #ecac16, #ec7b24);
+    animation: rotate-border 4s linear infinite;
+  }
+
+  .btn-gradient span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background-color: rgb(5, 6, 45);
+    border-radius: 6px;
+    color: white;
+    transition: background-color 300ms;
+  }
+
+  .btn-gradient:hover span {
+    background-color: rgb(30, 31, 70);
+  }
+
+  .btn-gradient:active {
+    transform: scale(0.95);
+    transition: transform 150ms;
   }
 }
